@@ -446,7 +446,7 @@ def main():
 
         print("=== [ SEMUA AKUN TELAH DI PROSES ] ===")
 
-        animate_energy_recharge(15)
+        animate_energy_recharge(sleep_time)
 
 # Jalankan fungsi main() dan simpan hasilnya
 
@@ -577,6 +577,16 @@ if auto_claim_combo == 'y':
             break
         else:
             print("Masukkan combo yang valid.")
+
+sleep_time = 28800 # 8 jam
+while True:
+    sleep_time_input = input("Masukkan waktu tunggu dalam detik (default: 28800 detik (8 jam)): ").strip()
+    if (sleep_time_input):
+        try:
+            sleep_time = int(sleep_time_input)
+            break
+        except ValueError:
+            print("Angka tidak valid.")
 
 # Jalankan fungsi main() dan simpan hasilnya
 main()
